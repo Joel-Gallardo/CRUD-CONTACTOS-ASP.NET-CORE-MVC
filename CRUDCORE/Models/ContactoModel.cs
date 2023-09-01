@@ -2,13 +2,13 @@
 {
     public class ContactoModel
     {
-        private int IdContacto { get; set; }
+        public int IdContacto { get; set; }
 
-        private string? Nombre { get; set; }
+        public string? Nombre { get; set; }
 
-        private string? Telefono { get; set; }
+        public string? Telefono { get; set; }
 
-        private string? Correo { get; set; }
+        public string? Correo { get; set; }
 
 
 

@@ -8,11 +8,12 @@ namespace CRUDCORE.Controllers
     {
 
         ContactoDatos contactoDatos = new ContactoDatos();
+
         public IActionResult Listar()
         {
             //La vista mostrara una lista de contactos
-            var oLista = ContactoDatos.Listar();
-            return View(oLista);
+            var objetoLista = contactoDatos.listarContactos();
+            return View(objetoLista);
         }
 
         public IActionResult Guardar()
@@ -21,10 +22,16 @@ namespace CRUDCORE.Controllers
             return View();
         }
 
-        public IActionResult Guardar()
+        [HttpPost]
+        public IActionResult Guardar(ContactoModel objetoContacto)
         {
             //metodo recibe el objeto para guardarlo en la BD
-            return View();
+            var respuesta = contactoDatos.gardarContacto(objetoContacto);
+
+            if (respuesta)
+                return RedirectToAction("Listar");
+            else
+                return View();
         }
     }
 }
