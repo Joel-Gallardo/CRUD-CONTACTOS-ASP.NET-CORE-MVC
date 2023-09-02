@@ -26,6 +26,10 @@ namespace CRUDCORE.Controllers
         public IActionResult Guardar(ContactoModel objetoContacto)
         {
             //metodo recibe el objeto para guardarlo en la BD
+
+            if (!ModelState.IsValid)
+                return View();
+            
             var respuesta = contactoDatos.gardarContacto(objetoContacto);
 
             if (respuesta)
@@ -33,5 +37,30 @@ namespace CRUDCORE.Controllers
             else
                 return View();
         }
+
+        public IActionResult Editar(int IdContacto)
+        {
+            //metodo solo devuelve la vista
+            var objetoContacto = contactoDatos.obtenerContactoById(IdContacto);
+            return View(objetoContacto);
+        }
+
+        [HttpPost]
+        public IActionResult Editar(ContactoModel objetoContacto)
+        {
+            //metodo solo devuelve la vista
+            if (!ModelState.IsValid)
+                return View();
+
+            var respuesta = contactoDatos.editarContacto(objetoContacto);
+
+            if (respuesta)
+                return RedirectToAction("Listar");
+            else
+                return View();
+
+        }
+
+
     }
 }

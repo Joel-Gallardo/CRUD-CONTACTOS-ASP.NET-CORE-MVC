@@ -107,7 +107,7 @@ namespace CRUDCORE.Datos
                 {
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("sp_EditarContacto", conexion);
-                    cmd.Parameters.AddWithValue("IdContacto", objetoContacto.Nombre);
+                    cmd.Parameters.AddWithValue("IdContacto", objetoContacto.IdContacto);
                     cmd.Parameters.AddWithValue("Nombre", objetoContacto.Nombre);
                     cmd.Parameters.AddWithValue("Telefono", objetoContacto.Telefono);
                     cmd.Parameters.AddWithValue("Correo", objetoContacto.Correo);
