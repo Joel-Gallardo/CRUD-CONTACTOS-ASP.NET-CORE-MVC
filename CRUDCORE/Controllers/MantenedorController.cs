@@ -61,6 +61,26 @@ namespace CRUDCORE.Controllers
 
         }
 
+        public IActionResult Eliminar(int IdContacto)
+        {
+            //METODO SOLO DEVUELVE LA VISTA
+            var objetoContacto = contactoDatos.obtenerContactoById(IdContacto);
+            return View(objetoContacto);
+        }
+
+        [HttpPost]
+        public IActionResult Eliminar(ContactoModel objetoContacto)
+        {
+
+            var respuesta = contactoDatos.eliminarContacto(objetoContacto.IdContacto);
+
+            if (respuesta)
+                return RedirectToAction("Listar");
+            else
+                return View();
+        }
 
     }
+
 }
+

@@ -23734,6 +23734,11 @@
       "FilePath": "d:\\Programming\\VisualStudio-repos\\CRUD-CONTACTOS-ASP.NET-CORE-MVC\\CRUDCORE\\CRUDCORE\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Programming\\VisualStudio-repos\\CRUD-CONTACTOS-ASP.NET-CORE-MVC\\CRUDCORE\\CRUDCORE\\Views\\Mantenedor\\Eliminar.cshtml",
+      "TargetPath": "Views\\Mantenedor\\Eliminar.cshtml",
+      "FileKind": "mvc"
     }
   ]
 }
